@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Debugging Practice</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>JavaScript Debugging Lab</h1>
+            <p>Practise JavaScript calculations, error handling and debugging.</p>
+        </header>
+
+        <!-- CALCULATOR -->
+        <section class="card">
+
+            <h2>Calculator</h2>
+
+            <label for="price">Product Price</label>
+            <input type="number" id="price" value="500" min="0">
+
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" value="3" min="1">
+
+            <button id="calculateBtn">Calculate Total</button>
+
+            <div id="calculatorOutput" class="output">
+                Your calculation will appear here.
+            </div>
+
+        </section>
+
+        <!-- ERROR HANDLING -->
+        <section class="card">
+
+            <h2>Error Handling</h2>
+
+            <p>Test JavaScript try, catch and finally.</p>
+
+            <button id="errorBtn" class="secondary-btn">
+                Test Error Handling
+            </button>
+
+            <div id="errorOutput" class="output">
+                Click the button to test error handling.
+            </div>
+
+        </section>
+
+        <!-- STUDENT MARKS -->
+        <section class="card">
+
+            <h2>Student Marks Calculator</h2>
+
+            <p>Calculate total and average marks.</p>
+
+            <button id="marksBtn">Calculate Student Marks</button>
+
+            <div id="marksOutput" class="output">
+                Student results will appear here.
+            </div>
+
+        </section>
+
+        <footer>
+            <p>JavaScript Practice Project</p>
+        </footer>
+
+    </div>
+
+    <script src="error-handling.js"></script>
+
+</body>
+</html>

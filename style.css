@@ -1,0 +1,146 @@
+
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* PAGE */
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    padding: 30px 15px;
+}
+
+/* MAIN CONTAINER */
+.container {
+    max-width: 750px;
+    margin: 20px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #1e40af;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+header p,
+section p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* CARDS */
+.card {
+    background: #f8fafc;
+    padding: 25px;
+    margin-bottom: 22px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+h2 {
+    color: #1e3a8a;
+    margin-bottom: 18px;
+}
+
+/* INPUTS */
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    margin-top: 7px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* BUTTONS */
+button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 18px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background: #475569;
+}
+
+.secondary-btn:hover {
+    background: #334155;
+}
+
+/* OUTPUT */
+.output {
+    margin-top: 18px;
+    padding: 15px;
+    background: #eff6ff;
+    border-radius: 8px;
+    color: #1e40af;
+    font-weight: 600;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+}
