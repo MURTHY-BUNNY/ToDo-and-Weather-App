@@ -1,1 +1,165 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SkyCast Weather</title><link rel="stylesheet" href="style.css"><link rel="icon" href="data:,"><script src="script.js" defer></script></head><body><main class="shell"><header><a class="brand" href="#">☀ skycast</a><span class="live">● LIVE WEATHER</span></header><section class="card"><p class="eyebrow">WEATHER, AT A GLANCE</p><h1>How's the sky<br>looking today?</h1><p class="muted">Search any city to see its current conditions.</p><form id="searchForm"><input id="cityInput" type="search" placeholder="Search city (e.g. Hyderabad)" required aria-label="City name"><button id="searchButton">Search</button></form><p id="status" role="status">Try Hyderabad, London or Tokyo.</p><section id="result" hidden><div class="location"><div><p class="eyebrow">CURRENT WEATHER</p><h2 id="cityName"></h2><small id="updated"></small></div><div id="icon" class="icon">☀️</div></div><div class="temperature"><strong id="temp">--</strong><sup>°C</sup><div><b id="condition"></b><small>Feels like <span id="feels">--</span>°C</small></div></div><div class="grid"><article>💧 <small>Humidity</small><b id="humidity">--%</b></article><article>🌬️ <small>Wind speed</small><b id="wind">-- km/h</b></article><article>🌧️ <small>Precipitation</small><b id="rain">-- mm</b></article><article>🕒 <small>Local time</small><b id="time">--</b></article></div></section></section><footer>Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a> · No API key required</footer></main></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast | Live Weather</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+
+<div class="container">
+
+    <header class="topbar">
+        <a class="brand" href="#">
+            <span class="brand-icon">☁</span> Sky<span class="brand-highlight">Cast</span>
+        </a>
+        <div class="live-badge">
+            <span class="live-dot"></span> LIVE WEATHER
+        </div>
+    </header>
+
+    <section class="hero">
+        <p class="eyebrow">WEATHER AT A GLANCE</p>
+        <h1>Forecast, <span class="brand-highlight">simplified.</span></h1>
+
+        <p class="subtitle">
+            Search any city worldwide to explore current weather conditions
+            and a seven-day forecast.
+        </p>
+
+        <form class="search-form" id="search-form">
+            <span class="search-icon">⌕</span>
+
+            <input
+                id="city-input"
+                type="text"
+                placeholder="Search a city (e.g., Hyderabad)"
+                autocomplete="off"
+                aria-label="City name"
+            >
+
+            <button id="search-btn" type="submit">Search</button>
+        </form>
+
+        <p class="search-hint">Try a city, town, or country name.</p>
+
+        <p class="status" id="status-message" role="status"></p>
+    </section>
+
+    <!-- CITY SEARCH RESULTS -->
+    <section class="city-results" id="city-results" hidden>
+        <div class="results-heading">
+            <h2>Choose a location</h2>
+            <span class="result-count" id="result-count">0 locations</span>
+        </div>
+
+        <p class="section-description">
+            We found multiple matching places. Select the correct location.
+        </p>
+
+        <div class="city-list" id="city-list"></div>
+    </section>
+
+    <!-- WEATHER DASHBOARD -->
+    <main class="weather-dashboard" id="weather-dashboard" hidden>
+
+        <section class="weather-card">
+
+            <!-- CITY AND TIME -->
+            <div class="weather-heading">
+                <div>
+                    <p class="eyebrow">CURRENT CONDITIONS</p>
+                    <h2 id="city-name">—</h2>
+                    <p class="location-details" id="location-details">—</p>
+                </div>
+
+                <div class="current-time">
+                    <span>LOCAL DATE & TIME</span>
+                    <strong id="current-time">--:--:--</strong>
+                    <p id="current-date" class="location-details">
+                        Loading date...
+                    </p>
+                </div>
+            </div>
+
+            <!-- TEMPERATURE -->
+            <div class="main-weather">
+                <div class="weather-icon" id="weather-icon">🌤️</div>
+
+                <div>
+                    <div class="temperature">
+                        <span id="temperature">--</span>
+                        <span class="degree">°C</span>
+                    </div>
+
+                    <p class="condition" id="weather-description">—</p>
+
+                    <p class="feels" id="feels-like">Feels like --°C</p>
+                </div>
+            </div>
+
+            <!-- WEATHER DETAILS -->
+            <div class="weather-stats">
+
+                <div class="stat">
+                    <span class="stat-icon">💧</span>
+                    <div>
+                        <p>Humidity</p>
+                        <strong id="humidity">--%</strong>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-icon">🌬️</span>
+                    <div>
+                        <p>Wind Speed</p>
+                        <strong id="wind-speed">-- km/h</strong>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-icon">🌧️</span>
+                    <div>
+                        <p>Precipitation</p>
+                        <strong id="precipitation">-- mm</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="updated" id="updated-time">
+                Weather data provided by Open-Meteo
+            </p>
+
+        </section>
+
+        <!-- FORECAST -->
+        <section class="forecast-section">
+            <div class="section-heading">
+                <h2>7-Day Forecast</h2>
+            </div>
+
+            <div class="forecast-list" id="forecast-list"></div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            Weather data powered by
+            <a href="https://open-meteo.com/" target="_blank" rel="noopener">
+                Open-Meteo
+            </a>
+        </p>
+        <p>SkyCast © 2026</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,1 +1,149 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TaskFlow To-Do</title><link rel="stylesheet" href="style.css"><link rel="icon" href="data:,"><script src="script.js" defer></script></head><body><main class="wrap"><section class="card"><header><div><p class="eyebrow">YOUR DAILY WORKSPACE</p><h1>TaskFlow<span>.</span></h1><p class="muted">Make space for what matters.</p></div><span id="today" class="pill"></span></header><form id="taskForm"><input id="taskInput" maxlength="120" placeholder="What needs to get done?" required aria-label="New task"><button id="submitBtn">Add task</button></form><nav class="toolbar"><div class="filters"><button type="button" class="filter active" data-filter="all">All</button><button type="button" class="filter" data-filter="pending">Pending</button><button type="button" class="filter" data-filter="completed">Completed</button></div><small id="count">0 tasks</small></nav><ul id="taskList"></ul><div id="empty" class="empty"><b>✓</b><h2>Nothing on your list yet</h2><p>Add a task above and take the first step.</p></div><footer><span id="progress">0 completed</span><button type="button" id="clearBtn" class="link">Clear completed</button></footer></section><p class="note">Your tasks are saved in this browser automatically.</p></main></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic page settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow To-Do</title>
+
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Remove favicon 404 warning -->
+    <link rel="icon" href="data:,">
+
+    <!-- JavaScript file -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Main application container -->
+    <main class="wrap">
+
+        <section class="card">
+
+            <!-- Header section -->
+            <header>
+
+                <div>
+                    <p class="eyebrow">YOUR DAILY WORKSPACE</p>
+
+                    <h1>TaskFlow<span>.</span></h1>
+
+                    <p class="muted">
+                        Make space for what matters.
+                    </p>
+                </div>
+
+                <!-- Today's date -->
+                <span id="today" class="pill"></span>
+
+            </header>
+
+
+            <!-- Add task form -->
+            <form id="taskForm">
+
+                <input
+                    id="taskInput"
+                    maxlength="120"
+                    placeholder="What needs to get done?"
+                    required
+                    aria-label="New task"
+                >
+
+                <button id="submitBtn">
+                    Add task
+                </button>
+
+            </form>
+
+
+            <!-- Task filters and count -->
+            <nav class="toolbar">
+
+                <div class="filters">
+
+                    <button
+                        type="button"
+                        class="filter active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter"
+                        data-filter="pending"
+                    >
+                        Pending
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter"
+                        data-filter="completed"
+                    >
+                        Completed
+                    </button>
+
+                </div>
+
+                <!-- Number of visible tasks -->
+                <small id="count">0 tasks</small>
+
+            </nav>
+
+
+            <!-- Task list -->
+            <ul id="taskList"></ul>
+
+
+            <!-- Empty list message -->
+            <div id="empty" class="empty">
+
+                <b>✓</b>
+
+                <h2>Nothing on your list yet</h2>
+
+                <p>
+                    Add a task above and take the first step.
+                </p>
+
+            </div>
+
+
+            <!-- Footer section -->
+            <footer>
+
+                <!-- Completed task progress -->
+                <span id="progress">0 completed</span>
+
+                <!-- Clear completed tasks button -->
+                <button
+                    type="button"
+                    id="clearBtn"
+                    class="link"
+                >
+                    Clear completed
+                </button>
+
+            </footer>
+
+        </section>
+
+
+        <!-- Information note -->
+        <p class="note">
+            Your tasks are saved in this browser automatically.
+        </p>
+
+    </main>
+
+</body>
+</html>
